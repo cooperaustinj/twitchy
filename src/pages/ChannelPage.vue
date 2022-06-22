@@ -53,11 +53,13 @@ export default defineComponent({
 
       if (event !== 'PRIVMSG') return
       if (settings.CMD_PREFIX_ONLY && !message.message.startsWith('!s ')) return
-      const msg = message.message.slice((settings.CMD_PREFIX_ONLY && 3) || 0)
+      let msg = message.message.slice((settings.CMD_PREFIX_ONLY && 3) || 0)
 
       if (msg.length > settings.MAX_MSG_LENGTH) return
       if (settings.NO_BAD_WORDS && bwFilter.isProfane(msg)) return
       if (settings.SINGLE_WORDS_ONLY && msg.match(/\s/)) return
+      if (settings.ANTI_SPAM_MODE)
+        msg = new Array(...new Set(msg.split(' '))).join(' ')
 
       messageHistory.value.push({
         time,

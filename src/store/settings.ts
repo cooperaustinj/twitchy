@@ -8,4 +8,5 @@ export default reactive({
   NO_BAD_WORDS: true,
   LOWERCASE_ONLY: true,
   SINGLE_WORDS_ONLY: true,
+  ANTI_SPAM_MODE: false,
 })
