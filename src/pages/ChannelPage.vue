@@ -1,18 +1,23 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <div>
-      <div v-for="s in messageStats" :key="s.msg">
-        <div class="row q-gutter-md q-mb-xl text-h4">
-          <div class="col col-shrink text-right">{{ s.count }}</div>
-          <div class="col">{{ s.msg }}</div>
-        </div>
+  <q-page class="row items-center justify-center">
+    <div class="col-10 q-pa-xl" id="message-box">
+      <div
+        v-for="s in messageStats"
+        :key="s.msg"
+        class="row q-gutter-md q-my-md text-h4 text-weight-bold"
+        style="width: 100%"
+      >
+        <div class="col text-right">{{ s.count }}</div>
+        <div class="col-10">{{ s.msg }}</div>
       </div>
     </div>
   </q-page>
 </template>
 
+<style scoped lang="scss"></style>
+
 <script lang="ts">
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
+import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import TwitchJs, { Messages } from 'twitch-js'
 import Filter from 'bad-words'
@@ -91,7 +96,12 @@ export default defineComponent({
       window.clearInterval(mainLoop)
     })
 
-    return { channelName, chatLog, messageHistory, messageStats }
+    return {
+      channelName,
+      chatLog,
+      messageHistory,
+      messageStats,
+    }
   },
 })
 </script>
