@@ -2,24 +2,13 @@
   <q-layout view="hhh lpR fff">
     <q-header bordered class="bg-primary text-white" height-hint="98">
       <q-toolbar>
+        <q-toolbar-title> Twitchy.chat </q-toolbar-title>
+        <q-space />
         <q-btn dense flat round icon="settings" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Twitchy.chat
-        </q-toolbar-title>
       </q-toolbar>
-
-      <!-- <q-tabs align="left">
-        <q-route-tab to="/page1" label="Page One" />
-        <q-route-tab to="/page2" label="Page Two" />
-        <q-route-tab to="/page3" label="Page Three" />
-      </q-tabs> -->
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
+    <q-drawer v-model="leftDrawerOpen" side="right" overlay bordered>
       <!-- drawer content -->
       <div class="q-pa-lg">
         <q-toggle
@@ -67,7 +56,7 @@ import settings from 'src/store/settings'
 
 export default {
   setup() {
-    const leftDrawerOpen = ref(false)
+    const leftDrawerOpen = ref(true)
 
     return {
       leftDrawerOpen,

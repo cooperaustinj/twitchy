@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-center">
-    <div class="col-10 q-pa-xl" id="message-box">
+    <div class="col-12 q-pa-xl" id="message-box">
       <div
         v-for="s in messageStats"
         :key="s.msg"
@@ -8,7 +8,7 @@
         style="width: 100%"
       >
         <div class="col text-right">{{ s.count }}</div>
-        <div class="col-10">{{ s.msg }}</div>
+        <div class="col-11">{{ s.msg }}</div>
       </div>
     </div>
   </q-page>
