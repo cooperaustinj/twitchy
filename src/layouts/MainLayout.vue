@@ -59,12 +59,20 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch, onBeforeMount } from 'vue'
 import settings from 'src/store/settings'
 
 export default {
   setup() {
     const leftDrawerOpen = ref(true)
+
+    onBeforeMount(() => {
+      const lss = window.localStorage.getItem('TW_SETTINGS')
+      if (lss) Object.assign(settings, JSON.parse(lss))
+      watch(settings, (s) => {
+        window.localStorage.setItem('TW_SETTINGS', JSON.stringify(s))
+      })
+    })
 
     return {
       leftDrawerOpen,
