@@ -56,8 +56,8 @@ export default defineComponent({
       const msg = message.message.slice((settings.CMD_PREFIX_ONLY && 3) || 0)
 
       if (msg.length > settings.MAX_MSG_LENGTH) return
-
       if (settings.NO_BAD_WORDS && bwFilter.isProfane(msg)) return
+      if (settings.SINGLE_WORDS_ONLY && msg.match(/\s/)) return
 
       messageHistory.value.push({
         time,

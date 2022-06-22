@@ -17,6 +17,10 @@
         />
         <q-toggle v-model="settings.CMD_PREFIX_ONLY" label="Prefix only (!s)" />
         <q-toggle v-model="settings.LOWERCASE_ONLY" label="Case insensitive" />
+        <q-toggle
+          v-model="settings.SINGLE_WORDS_ONLY"
+          label="Single words only"
+        />
         <q-input
           v-model.number="settings.HISTORY_KEEP_SECONDS"
           label="History Duration (seconds)"
