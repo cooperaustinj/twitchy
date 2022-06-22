@@ -45,7 +45,7 @@
           <ul>
             <li>Luma Max: 1.0000</li>
             <li>Luma Max Smooth: 0.0000</li>
-            <li>Luma Min: 0.5000</li>
+            <li>Luma Min: 0.1000</li>
             <li>Luma Min Smooth: 0.0000</li>
           </ul>
         </div>
