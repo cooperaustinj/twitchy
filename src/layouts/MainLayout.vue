@@ -39,6 +39,16 @@
           lazy-rules
           :rules="lengthRules"
         />
+        <div>
+          Use a Luma Key filter on the browser source for a transparent
+          background.
+          <ul>
+            <li>Luma Max: 1.0000</li>
+            <li>Luma Max Smooth: 0.0000</li>
+            <li>Luma Min: 0.5000</li>
+            <li>Luma Min Smooth: 0.0000</li>
+          </ul>
+        </div>
       </div>
     </q-drawer>
 

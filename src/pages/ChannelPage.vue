@@ -17,7 +17,7 @@
 <style scoped lang="scss"></style>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue'
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import TwitchJs, { Messages } from 'twitch-js'
 import Filter from 'bad-words'
