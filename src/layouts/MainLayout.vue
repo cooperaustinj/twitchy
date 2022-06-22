@@ -22,7 +22,10 @@
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <!-- drawer content -->
       <div class="q-pa-lg">
-        <q-toggle v-model="settings.NO_BAD_WORDS" label="No bad words" />
+        <q-toggle
+          v-model="settings.NO_BAD_WORDS"
+          label="No bad words (basic)"
+        />
         <q-toggle v-model="settings.CMD_PREFIX_ONLY" label="Prefix only (!s)" />
         <q-toggle v-model="settings.LOWERCASE_ONLY" label="Case insensitive" />
         <q-input
