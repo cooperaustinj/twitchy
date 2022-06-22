@@ -21,7 +21,10 @@
           v-model="settings.SINGLE_WORDS_ONLY"
           label="Single words only"
         />
-        <q-toggle v-model="settings.ANTI_SPAM_MODE" label="Anti-spam mode" />
+        <q-toggle
+          v-model="settings.FLATTEN_REPEAT_WORDS"
+          label="Flatten repeat words"
+        />
         <q-input
           v-model.number="settings.HISTORY_KEEP_SECONDS"
           label="History Duration (seconds)"

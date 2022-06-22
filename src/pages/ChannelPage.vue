@@ -58,7 +58,7 @@ export default defineComponent({
       if (msg.length > settings.MAX_MSG_LENGTH) return
       if (settings.NO_BAD_WORDS && bwFilter.isProfane(msg)) return
       if (settings.SINGLE_WORDS_ONLY && msg.match(/\s/)) return
-      if (settings.ANTI_SPAM_MODE)
+      if (settings.FLATTEN_REPEAT_WORDS)
         msg = new Array(...new Set(msg.split(' '))).join(' ')
 
       messageHistory.value.push({
